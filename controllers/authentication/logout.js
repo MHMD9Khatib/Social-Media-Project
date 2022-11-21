@@ -1,9 +1,10 @@
 
 const logout = (req, res, next) => {
   try {
-    res.clearCookie('token').json({ message: '1013' });
+    res.clearCookie('token').json({ message: 'Logout from user success' });
   } catch (err) {
-    next(err);
+    console.log(err)
+    return next(err);
   }
   };
 

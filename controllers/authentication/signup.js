@@ -11,13 +11,17 @@ const signUp = async (req, res, next) => {
     if (user) {
       return res
         .status(403)
-        .json({ error: { message: '1007' } });
+        .json({ error: { message: 'error user' } });
     }
     const newUser = await addNewUser(req.body);
     req.userId = newUser.id;
-
-    return next();
+    
+    console.log(newUser);
+    return res
+    .status(200)
+    .json({ error: { message: 'user create sucscc' } });
   } catch (error) {
+    console.log(error);
     if (error.details) {
       error.status = 400;
     }

@@ -5,8 +5,10 @@ const {
     logout 
     } = require('../controllers/authentication/index');
 
-authRouter.post('/signup', signUp);
-authRouter.post('/login', login);
+const setCookie = require("../middlewares/cookie")
+
+authRouter.post('/signup', signUp , setCookie);
+authRouter.post('/login', login , setCookie);
 authRouter.get('/logout', logout);
 
 module.exports =  authRouter;

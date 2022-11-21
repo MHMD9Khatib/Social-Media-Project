@@ -1,9 +1,10 @@
 const connection = require('../../connection/index')
 
 module.exports = async (email) => {
+  console.log(email);
     const { rows } = await connection
       .query(
-        'SELECT * FROM user WHERE email= $1 ;',
+        'SELECT * FROM users WHERE email= $1 ;',
         [email],
       );
   

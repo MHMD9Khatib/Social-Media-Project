@@ -5,7 +5,7 @@ const removeLike = (req, res, next) => {
     const { id } = req.body;
     deleteLikeComment(id)
       .then((result) => result.rows)
-      .then((data) => res.status(200).json({ msg: ' like down - 1 ', data, status: 200 }))
+      .then((data) => res.status(200).json({ msg: ' likepostgres down - 1 ', data, status: 200 }))
       .catch(() => next());
   };
 

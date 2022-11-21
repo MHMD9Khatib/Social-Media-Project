@@ -20,12 +20,11 @@ const { Pool } = require('pg');
 // module.exports = new Pool(options);
 
 const pool = new Pool({
-  user: 'me',
+  user: 'postgres',
   host: 'localhost',
-  database: 'booklist',
-  password: 'password',
+  database: 'socialdb',
+  password: 'myPassword',
   port: 5432,
-
 })
 
 

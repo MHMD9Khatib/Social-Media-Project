@@ -1,28 +1,12 @@
 BEGIN;
-DROP TABLE IF EXISTS user, posts, comment, like, share;
-CREATE TABLE user(
+DROP TABLE IF EXISTS users;
+CREATE TABLE users(
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(150) NOT NULL,
     password TEXT NOT NULL
 );
 
--- CREATE TABLE post(
---     id INT PRIMARY KEY,
---     title VARCHAR(250) NOT NULL,
---     content VARCHAR(250) NOT NULL,
---     created_date TIMESTAMP,
---     liks INT,
---     comments INT,
---     share INT,
---     edite_post VARCHAR(250) NOT NULL,
---     edited BOOLEAN NOT NULL DEFAULT false,
---     views INT,
---     user_id INT,
---     -- constraint fk_post_user
---     -- foreign key (user_id) 
---     -- REFERENCES user (user_id)
--- );
 CREATE TABLE posts (
     id SERIAL PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
@@ -47,24 +31,13 @@ CREATE TABLE like{
     id INT PRIMARY KEY,
     post_id INT,
     user_id INT,
-    -- constraint fk_like_post
-    -- foreign key (post_id) 
-    -- REFERENCES user (post_id),
-    -- constraint fk_like_user
-    -- foreign key (user_id) 
-    -- REFERENCES user (user_id)
+
 }
 
 CREATE TABLE share{
     id INT PRIMARY KEY,
     post_id INT,
     user_id INT,
-    -- constraint fk_like_post
-    -- foreign key (post_id) 
-    -- REFERENCES user (post_id),
-    -- constraint fk_like_user
-    -- foreign key (user_id) 
-    -- REFERENCES user (user_id)
 }
 
 COMMIT;
