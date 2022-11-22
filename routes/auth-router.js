@@ -7,8 +7,10 @@ const {
 
 const setCookie = require("../middlewares/cookie")
 
-authRouter.post('/signup', signUp , setCookie);
-authRouter.post('/login', login , setCookie);
+authRouter.post('/signup', signUp);
+authRouter.post('/login', login );
 authRouter.get('/logout', logout);
 
 module.exports =  authRouter;
+
+

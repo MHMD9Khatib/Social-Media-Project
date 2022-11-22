@@ -5,7 +5,7 @@ const loginValidation = require('../../attachments/validations/login');
 // const myError = require('../errors/costm-error');
 const checkAccount  = require('../../database/queries/user/check-account');
 const { comparePasswords } = require('../../b-crypt/index');
-const signToken = require('../../sign-token/index')
+const {signToken} = require('../../sign-token/index')
 
 const login = async (req, res, next) => {
   try {
@@ -31,9 +31,11 @@ const login = async (req, res, next) => {
     const {SECRET_KEY}  = process.env;
     // const { userId } = req;
     // return res.json({m:"login success"});
+    const {password:pass,...rest}= user;
 
     const token = await signToken(user.id.toString() , SECRET_KEY);
-    res.json({token})
+    console.log('fathi',token);
+    return res.json({...rest  ,token})
     // return res
     // .cookie('token', token, { httpOnly: true, secure: true })
     // .status(200)

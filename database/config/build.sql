@@ -12,10 +12,10 @@ CREATE TABLE posts (
     title VARCHAR(100) NOT NULL,
     content TEXT NOT NULL,
     community_name VARCHAR(100) NOT NULL,
-    like INTEGER DEFAULT 0,
-    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-    content_type VARCHAR(100) DEFAULT 'text',
-    post_date TIMESTAMP NOT NULL DEFAULT NOW()
+    likee INTEGER ,
+    user_id INTEGER,
+    content_type VARCHAR(100),
+    post_date TIMESTAMP NOT NULL
 );
 
 CREATE TABLE comment (
