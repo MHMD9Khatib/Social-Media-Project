@@ -97,8 +97,8 @@
 
   const {
     addComment,
-    postComments,
-    userComments,
+    allComments,
+    getOneComment,
     addLike,
     removeLike,
     removeComment,
@@ -106,8 +106,7 @@
 
 const {
   addPost,
-  userPosts,
-  userProfile,
+  getOnePost,
   allPosts,
   likeUp,
   likeDown,
@@ -121,15 +120,14 @@ const {
     // deleteUser,
     
     addComment,
-    postComments,
-    userComments,
+    allComments,
+    getOneComment,
     addLike,
     removeLike,
     removeComment,
 
     addPost,
-    userPosts,
-    userProfile,
+    getOnePost,
     allPosts,
     likeUp,
     likeDown,

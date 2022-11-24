@@ -20,6 +20,6 @@ const signToken = (payload, secret) => new Promise((resolve, reject) => {
     });
   });
 
-  
+
 
 module.exports = { verifyToken, signToken };

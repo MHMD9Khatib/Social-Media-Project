@@ -9,22 +9,22 @@ CREATE TABLE users(
 
 CREATE TABLE posts (
     id SERIAL PRIMARY KEY,
-    title VARCHAR(100) NOT NULL,
-    content TEXT NOT NULL,
-    community_name VARCHAR(100) NOT NULL,
+    title TEXT ,
+    content TEXT ,
+    community_name TEXT,
     likee INTEGER ,
     user_id INTEGER,
-    content_type VARCHAR(100),
-    post_date TIMESTAMP NOT NULL
+    content_type TEXT,
+    post_date TIMESTAMP 
 );
 
-CREATE TABLE comment (
-    id  PRIMARY KEY,
+CREATE TABLE comments (
+    id SERIAL PRIMARY KEY,
     content TEXT NOT NULL,
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     post_id INTEGER REFERENCES posts(id) ON DELETE CASCADE,
-    like INTEGER DEFAULT 0,
-    date TIMESTAMP NOT NULL
+    likee INTEGER ,
+    date TIMESTAMP
 );
 
 CREATE TABLE like{

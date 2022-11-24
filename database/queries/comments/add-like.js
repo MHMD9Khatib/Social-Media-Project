@@ -1,7 +1,7 @@
 const connection = require('../../connection/index')
 
 const addLikeComment = (id) => connection.query({
-    text: 'UPDATE comment SET like = like + 1 WHERE id = $1;',
+    text: 'UPDATE comments SET likee = likee + 1 WHERE id = $1 RETURNING *;',
     values: [id],
   });
 

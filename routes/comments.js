@@ -1,8 +1,8 @@
 const commentsRouter = require('express').Router();
 const {
     addComment,
-    postComments,
-    userComments,
+    allComments,
+    getOneComment,
     addLike,
     removeLike,
     removeComment,
@@ -11,10 +11,10 @@ const {
 const { routProtector } = require('../middlewares/index');
 
 commentsRouter.post('/create',routProtector, addComment);
-commentsRouter.post('/post', postComments);
-commentsRouter.post('/user', routProtector, userComments);
-commentsRouter.post('/add', routProtector, addLike);
-commentsRouter.post('/remove', routProtector, removeLike);
+commentsRouter.get('/all-comment', allComments);
+commentsRouter.get('/get-comment/:id', routProtector, getOneComment);
+commentsRouter.put('/addlike', routProtector, addLike);
+commentsRouter.put('/removelike', routProtector, removeLike);
 commentsRouter.delete('/delete/:id', routProtector, removeComment);
 
 module.exports =  commentsRouter ;

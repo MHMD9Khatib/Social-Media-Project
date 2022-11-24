@@ -6,7 +6,7 @@ const port = app.get('port');
 
 app.use(authRouter);
 app.use(postsRouter);
-app.use('/comments', commentsRouter);
+app.use(commentsRouter);
 app.use(notFoundError);
 app.use(serverError);
 

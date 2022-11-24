@@ -6,4 +6,4 @@ const insertPost = (title, content, community_name, user_id, content_type) =>  c
   });
 
 
-module.exports = insertPost;
+module.exports = {insertPost};

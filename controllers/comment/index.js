@@ -6,9 +6,9 @@
 
 
 
-const  addComment = require('./addComment');
-const  postComments  = require('./getAllComment');
-const  userComments  = require('./userComment');
+const  {addComment} = require('./addComment');
+const  allComments  = require('./getAllComment');
+const  {getOneComment}  = require('./get-one-comment');
 const  addLike  = require('./addLike');
 const  removeLike  = require('./removeLike');
 const  removeComment  = require('./deleteComment');
@@ -17,8 +17,8 @@ const  removeComment  = require('./deleteComment');
 
 module.exports = {
     addComment,
-    postComments,
-    userComments,
+    allComments,
+    getOneComment,
     addLike,
     removeLike,
     removeComment,

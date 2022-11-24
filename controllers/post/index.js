@@ -1,15 +1,14 @@
 const addPost = require('./add-post')
-const {userPosts , userProfile} = require('./user-post');
+const getOnePost = require('./get-post-ById');
 const allPosts = require('./all-posts')
-const likeUp = require('./add-like')
-const likeDown = require('./remove-like')
-const postDelete = require('./delete-post')
+const {likeUp} = require('./add-like')
+const {likeDown} = require('./remove-like')
+const {postDelete} = require('./delete-post')
 
 
 module.exports = {
   addPost,
-  userPosts,
-  userProfile,
+  getOnePost,
   allPosts,
   likeUp,
   likeDown,

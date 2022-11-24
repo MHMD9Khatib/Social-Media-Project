@@ -1,13 +1,17 @@
 const { commentValidation } = require('../../attachments/validations/comment');
-const insertComment = require('../../database/queries/comments/add-comment');
+const {insertComment} = require('../../database/queries/comments/index');
 
 const addComment = (req, res, next) => {
+  console.log(req.body);
     commentValidation
       .validateAsync(req.body)
-      .then((values) => insertComment(values))
-      .then((result) => result.rows[0])
-      .then((comment) => res.status(201).json({ msg: 'comment created', data: comment, status: 201 }))
-      .catch(() => next());
+      .then(() => insertComment(req.body))
+      .then(() => res.status(201).json({ msg: 'comment created',status: 201 }))
+      .catch((error) => {
+        console.log(error);
+        return next()
+      });
+
   };
 
-  module.exports = addComment;
+  module.exports = {addComment};

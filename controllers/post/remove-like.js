@@ -1,4 +1,4 @@
-const decreaseLike = require('../../database/queries/post/index');
+const {decreaseLike} = require('../../database/queries/post/index');
 
 const likeDown = (req, res, next) => {
     const { id } = req.body;
@@ -8,4 +8,4 @@ const likeDown = (req, res, next) => {
       .catch(() => next());
   };
 
-module.exports = likeDown;
+module.exports = {likeDown};

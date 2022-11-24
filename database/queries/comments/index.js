@@ -1,15 +1,15 @@
-const addComment = require('./add-comment');
+const {insertComment} = require('./add-comment');
 const addLike = require('./add-like');
-const getCommentId = require('./get-comment-by-id')
-const getComment = require('./get-comment');
+const {getCommentsById} = require('./get-comment-by-id')
+const getAllComments = require('./get-comment');
 const removeComment = require('./remove-comment');
 const removeLike = require('./remove-like');
 
 module.exports = {
-    addComment,
+    insertComment,
     addLike,
-    getCommentId,
-    getComment,
+    getCommentsById,
+    getAllComments,
     removeComment,
     removeLike
 }

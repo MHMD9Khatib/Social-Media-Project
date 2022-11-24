@@ -49,18 +49,18 @@
 //   deletePost,
 // };
 
-const addPost = require('./add-post');
-const deletePost = require('./delete-post')
-const getUserPosts = require('./get-post-by-id')
-const getPosts = require('./get-post')
+const {insertPost} = require('./add-post');
+const {deletePost} = require('./delete-post')
+const {getUserPosts} = require('./get-post-by-id')
+const {getAllPosts} = require('./get-post')
 const insertLike = require('./insert-like')
-const decreaseLike = require('./remove-like')
+const {decreaseLike} = require('./remove-like')
 
 module.exports = {
-  addPost,
+  insertPost,
   deletePost,
   getUserPosts,
-  getPosts,
+  getAllPosts,
   insertLike,
   decreaseLike
 }

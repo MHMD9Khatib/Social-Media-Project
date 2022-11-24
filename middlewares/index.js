@@ -14,9 +14,8 @@ const routProtector = async(req, res, next) => {
     if (token) {
       const value = await verifyToken(token, SECRET_KEY);
       console.log(value, "value");
-      req.body.user_id = value.user_id;
+      req.user_id = value.user_id;
       next();
-      console.log(user_id, "user_id");
     } else {
       res.status(401).json({ message: 'error 401' });
     }
