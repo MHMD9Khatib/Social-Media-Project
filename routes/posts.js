@@ -14,8 +14,8 @@ postsRouter.get('/user-profile/:id', getOnePost);
 postsRouter.get('/all-posts', allPosts);
 postsRouter.post('/add-post', routProtector, addPost);
 // postsRouter.post('/user-posts', routProtector, userPosts);
-postsRouter.put('/like-up', routProtector, likeUp);
-postsRouter.put('/like-down', routProtector, likeDown);
+postsRouter.post('/like-up', routProtector, likeUp);
+postsRouter.delete('/like-down/:post_id', routProtector, likeDown);
 postsRouter.delete('/delete-post/:id', routProtector, postDelete);
 
 module.exports = postsRouter;

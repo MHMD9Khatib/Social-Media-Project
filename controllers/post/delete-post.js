@@ -10,12 +10,12 @@ const postDelete = async (req, res, next) => {
       if (!post) {
         return res.status(400).json({ message: 'post Not Found' });
       }
-      // if (post.user_id !== userId) {
-      //   console.log(post.user_id);
-      //   return res.status(403).json({
-      //     message: 'You don\'t have permission to delete this post',
-      //   });
-      // }
+      
+      if (post.user_id !== userId) {
+        return res.status(403).json({
+          message: 'You don\'t have permission to delete this post',
+        });
+      }
       await deletePost(postId);
       return res.json({ message: 'post Deleted Successfuly' });
     }

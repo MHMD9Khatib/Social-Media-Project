@@ -9,7 +9,7 @@
 const  {addComment} = require('./addComment');
 const  allComments  = require('./getAllComment');
 const  {getOneComment}  = require('./get-one-comment');
-const  addLike  = require('./addLike');
+const  {addLike}  = require('./addLike');
 const  removeLike  = require('./removeLike');
 const  removeComment  = require('./deleteComment');
 

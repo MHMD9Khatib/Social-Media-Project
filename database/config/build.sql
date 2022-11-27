@@ -9,11 +9,11 @@ CREATE TABLE users(
 
 CREATE TABLE posts (
     id SERIAL PRIMARY KEY,
-    title TEXT ,
+    title TEXT  ,
     content TEXT ,
     community_name TEXT,
     likee INTEGER ,
-    user_id INTEGER,
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     content_type TEXT,
     post_date TIMESTAMP 
 );
@@ -27,17 +27,20 @@ CREATE TABLE comments (
     date TIMESTAMP
 );
 
-CREATE TABLE like{
-    id INT PRIMARY KEY,
-    post_id INT,
-    user_id INT,
+CREATE TABLE likee(
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    post_id INTEGER REFERENCES posts(id) ON DELETE CASCADE
+);
 
-}
+CREATE TABLE likeComments(
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    comment_id INTEGER REFERENCES comments(id) ON DELETE CASCADE
+);
 
-CREATE TABLE share{
-    id INT PRIMARY KEY,
-    post_id INT,
-    user_id INT,
-}
+-- CREATE TABLE share{
+--     id INT PRIMARY KEY,
+--     post_id INT,
+--     user_id INT,
+-- }
 
 COMMIT;
